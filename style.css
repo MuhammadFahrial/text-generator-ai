@@ -9,78 +9,127 @@
 
 body{
     background: #212121;
-    /* background: linear-gradient(to right, rgba(254,146,0,1) 0%, rgba(255,0,249,1) 100%);   */
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 60px 0;
+    margin: 20px 0 0 0;
     padding: 0 60px;
 }
 
 .container{
-    min-width: 350px;
-    padding: 20px;
+    position: relative;
     border-radius: 16px;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border-radius: 10px;
     border: none;
+    width: 60%;
+    max-width: 60%;
+    min-height: 96vh;
 }
 
 .input{
     display: flex;
-    justify-content: center;
-    margin: 10px 0;
+    justify-content: space-between;
+    padding: 12px;
+    border: 1px solid #4d4d4d;
+    border-radius: 10px;
+    right: 0;
+    left: 0;
+    position: absolute;
+    bottom: 0;
 }
 
 input[type='text']{
     outline: none;
-    padding: 4px 18px;
-    margin-right: 8px;
+    margin-right: 12px;
     border:none;
-    border-radius: 4px;
-    width: 250px;
+    width: 100%;
+    background: transparent;
+    color: #fff;
+    font-size: 18px;
 }
 
 button{
     cursor: pointer;
     padding: 2px 8px;
-    border-radius: 4px;
-    background: red;
+    border-radius: 8px;
     outline: none;
     border: none;
     background: transparent;
-    border: 1px solid #fff;
-}
-
-button span{
- display: flex;
- justify-content: center;
- align-items: center;
- color: #fff;
- width: 24px;
- height: 32px;
+    border: 1px solid #4d4d4d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #4d4d4d;
+    height: 32px;
 }
 
 button:hover{
     background-color: rgb(255, 255, 255);
+    color: #212121;
 }
 
-button span:hover{
-    color: #212121;
+.your-message{
+    margin-bottom: 30px;
+}
+
+.your-output{
+    margin-bottom: 30px;
 }
 
 p{
     color: #fff;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 300;
-    line-height: 1.3em;
-    text-align: justify;
+    line-height: 1.5em;
 }
 
 h3{
     color: #fff;
-    margin: 30px 0 5px;
+}
+
+.answer{
+    height: 790px;
+    overflow-y: scroll;
+    scroll-snap-type: none;
+    padding: 0 30px 0 0 ;
+
+}
+
+::-webkit-scrollbar {
+    width: 1px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(189, 189, 189); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #343434; 
+  }
+
+@media only screen and (max-width: 768px) {
+    .container{
+        /* position: relative; */
+        min-width: 350px;
+        min-height: 96vh;
+    }
+    .answer{
+        height: 660px;
+        padding: 0;
+    }
+    
 }
