@@ -36,18 +36,20 @@ body{
     right: 0;
     left: 0;
     position: sticky;
+    bottom: 0;
     margin: 0 8% 2%;
 }
 
-input[type='text']{
+textarea[type='text']{
     outline: none;
-    margin-right: 12px;
+    margin-right: 40px;
     border:none;
     width: 100%;
     background: transparent;
     color: #fff;
     font-size: 18px;
     text-decoration: none;
+    resize: none;
 }
 
 button{
@@ -63,6 +65,14 @@ button{
     align-items: center;
     color: #4d4d4d;
     height: 32px;
+}
+
+.input button{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 button:hover{
@@ -83,6 +93,11 @@ p{
 
 h3{
     color: #fff;
+}
+
+.btn-copy{
+    color: #fff;
+    margin-top: 6px;
 }
 
 .answer{

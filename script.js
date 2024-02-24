@@ -1,7 +1,12 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // Fetch your API_KEY
-const API_KEY = "YOUR_API_KEY";
+const API_KEY = "Your_API_KEY";
+
+// Get Element
+const sendMsg = document.getElementById("sendMsg");
+const yourMsg = document.getElementById("inputText");
+const answer = document.querySelector(".answer");
 
 // Access your API key (see "Set up your API key" above)
 const genAI = new GoogleGenerativeAI(API_KEY);
@@ -20,16 +25,28 @@ async function run(yourMsg) {
   const div = document.createElement("div");
   const profileAnswer = document.createElement("h3");
   const yourAnswer = document.createElement("p");
-  div.append(profileAnswer, yourAnswer);
+  const copyClipboard = document.createElement("button");
+  copyClipboard.textContent = "Copy";
+  copyClipboard.classList.add("btn-copy");
+
+  div.append(profileAnswer, yourAnswer, copyClipboard);
   div.classList.add("your-output");
   answer.append(div);
   profileAnswer.innerHTML = "Bot AI";
   yourAnswer.innerHTML = text;
-}
 
-const sendMsg = document.getElementById("sendMsg");
-const yourMsg = document.getElementById("inputText");
-const answer = document.querySelector(".answer");
+  // Click CopyClipboard
+  copyClipboard.addEventListener("click", () => {
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        alert("Copied to the clipboard");
+      })
+      .catch((err) => {
+        alert.error("Failed to copy text: ", err);
+      });
+  });
+}
 
 sendMsg.addEventListener("click", () => {
   const div = document.createElement("div");
