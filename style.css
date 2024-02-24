@@ -10,13 +10,11 @@
 body{
     background: #212121;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 20px 0 0 0;
-    padding: 0 60px;
 }
 
 .container{
@@ -26,9 +24,7 @@ body{
     -webkit-backdrop-filter: blur(5px);
     border-radius: 10px;
     border: none;
-    width: 60%;
-    max-width: 60%;
-    min-height: 96vh;
+    width: 100%;
 }
 
 .input{
@@ -39,8 +35,8 @@ body{
     border-radius: 10px;
     right: 0;
     left: 0;
-    position: absolute;
-    bottom: 0;
+    position: sticky;
+    margin: 0 8% 2%;
 }
 
 input[type='text']{
@@ -51,6 +47,7 @@ input[type='text']{
     background: transparent;
     color: #fff;
     font-size: 18px;
+    text-decoration: none;
 }
 
 button{
@@ -73,12 +70,8 @@ button:hover{
     color: #212121;
 }
 
-.your-message{
-    margin-bottom: 30px;
-}
-
-.your-output{
-    margin-bottom: 30px;
+.your-message,.your-output{
+    padding: 1% 8%;
 }
 
 p{
@@ -93,11 +86,11 @@ h3{
 }
 
 .answer{
-    height: 790px;
     overflow-y: scroll;
     scroll-snap-type: none;
-    padding: 0 30px 0 0 ;
-
+    margin-bottom: 1%;
+    height: 100%;
+    width: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -122,14 +115,12 @@ h3{
   }
 
 @media only screen and (max-width: 768px) {
-    .container{
-        /* position: relative; */
-        min-width: 350px;
-        min-height: 96vh;
-    }
     .answer{
-        height: 660px;
-        padding: 0;
+        padding: 6% 0;
+        margin-bottom: 4%;
     }
-    
+
+    .input{
+        margin-bottom: 8%;
+    }
 }
